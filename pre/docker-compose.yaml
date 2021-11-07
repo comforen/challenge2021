@@ -1,0 +1,105 @@
+version: "3.9"
+
+volumes:
+  prometheus-data:
+    driver: local
+  grafana-data:
+    driver: local
+    
+services:
+   # Price Manager   
+   pricemanager:
+      image: comforen/vlab:price-prometheus-v1.0.0
+      container_name: ${TEAMID}-pricemanager
+      hostname: pricemanager
+      environment:
+         - TEAM_ID=${TEAMID}
+   
+   # Residential Customer Without a PV # 1
+   rcwopv1:
+      image: comforen/vlab:rcustwopv-prometheus-v1.0.0
+      container_name: ${TEAMID}-rcwopv1
+      hostname: rcwopv1
+      environment:
+         - TEAM_ID=${TEAMID}
+   
+   # Residential Customer Without a PV # 2
+   rcwopv2:
+      image: comforen/vlab:rcustwopv-prometheus-v1.0.0
+      container_name: ${TEAMID}-rcwopv2
+      hostname: rcwopv2
+      environment:
+         - TEAM_ID=${TEAMID}
+   
+   # Residential Customer With a PV # 1
+   rcwpv1:
+      image: comforen/vlab:rcustwpv-prometheus-v1.0.0
+      container_name: ${TEAMID}-rcwpv1
+      hostname: rcwpv1
+      environment:
+         - TEAM_ID=${TEAMID}
+   
+   # Residential Customer With a PV # 2
+   rcwpv2:
+      image: comforen/vlab:rcustwpv-prometheus-v1.0.0
+      container_name: ${TEAMID}-rcwpv2
+      hostname: rcwpv2
+      environment:
+         - TEAM_ID=${TEAMID}         
+   
+   # Commercial Customer With a PV # 1
+   ccwpv1:
+      image: comforen/vlab:ccustwpv-prometheus-v1.0.0
+      container_name: ${TEAMID}-ccwpv1
+      hostname: ccwpv1
+      environment:
+         - TEAM_ID=${TEAMID}
+   
+   # Residential Customer Without a PV # 1
+   ccwopv1:
+      image: comforen/vlab:ccustwopv-prometheus-v1.0.0
+      container_name: ${TEAMID}-ccwopv1
+      hostname: ccwopv1
+      environment:
+         - TEAM_ID=${TEAMID}
+   
+   # Community Battery
+   cbat:
+      image: comforen/vlab:communitybattery-prometheus-v1.0.0
+      container_name: ${TEAMID}-cbat
+      hostname: cbat
+      environment:
+         - TEAM_ID=${TEAMID}
+   
+   # Community PV
+   cpv:
+      image: comforen/vlab:communitypv-prometheus-v1.0.0    
+      container_name: ${TEAMID}-cpv
+      hostname: cpv
+      environment:
+         - TEAM_ID=${TEAMID}
+   
+   # Monitoring
+   prometheus:
+      image: prom/prometheus
+      container_name: ${TEAMID}-prometheus
+      hostname: prometheus
+      ports:
+        - "9099:9090"
+      volumes:
+        - ./prometheus:/etc/prometheus
+        - prometheus-data:/prometheus
+      restart: unless-stopped
+      command:
+        - "--config.file=/etc/prometheus/config/prometheus.yml"
+   
+   # Dashboard
+   grafana:
+      image: grafana/grafana:latest
+      container_name: ${TEAMID}-grafana
+      hostname: grafana
+      ports:
+        - "3030:3000"
+      volumes:
+        - grafana-data:/var/lib/grafana        
+      restart: unless-stopped

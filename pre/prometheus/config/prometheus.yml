@@ -1,0 +1,181 @@
+global:
+  scrape_interval: 15s
+  
+scrape_configs:
+######################################################################
+#                  P R O M E T H E U S  H O S T
+######################################################################
+## Gather metrics of prometheus itself
+- job_name: prometheus
+  static_configs:
+    - targets:
+      - localhost:9090
+######################################################################
+#                         A P P  H O S T S
+######################################################################
+## Residential Customer WO PV 1 host
+- job_name: 'rcwopv1_host'
+  static_configs:
+    - targets:
+      - rcwopv1:7979
+## Residential Customer WO PV 2 host
+- job_name: 'rcwopv2_host'
+  static_configs:
+    - targets:
+      - rcwopv2:7979
+## Residential Customer With PV 1 host
+- job_name: 'rcwpv1_host'
+  static_configs:
+    - targets:
+      - rcwpv1:7979
+## Residential Customer With PV 2 host
+- job_name: 'rcwpv2_host'
+  static_configs:
+    - targets:
+      - rcwpv2:7979
+## Commercial Customer With PV 1 host
+- job_name: 'ccwpv1_host'
+  static_configs:
+    - targets:
+      - ccwpv1:7979
+## Commercial Customer Without PV 1 host
+- job_name: 'ccwopv1_host'
+  static_configs:
+    - targets:
+      - ccwopv1:7979
+## Price Manager's host
+- job_name: 'pricemanager_host'
+  static_configs:
+    - targets:
+      - pricemanager:7979
+## Community Battery's host
+- job_name: cbat_host
+  static_configs:
+    - targets:
+      - cpv:7979
+## Community Battery's host
+- job_name: 'cpv_host'
+  static_configs:
+    - targets:
+      - cbat:7979      
+######################################################################
+#                             A P P S
+######################################################################
+# Residential customer WO PV 1
+- job_name: 'rcwopv1_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://rcwopv1:8080/measure/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: rcwopv1:7979
+# Residential customer WO PV 2
+- job_name: 'rcwopv2_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://rcwopv2:8080/measure/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: rcwopv2:7979      
+# Residential customer With PV 1
+- job_name: 'rcwpv1_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://rcwpv1:8080/measure/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: rcwpv1:7979
+# Residential customer with PV 2
+- job_name: 'rcwpv2_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://rcwpv2:8080/measure/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: rcwpv2:7979
+# Commercial customer With PV 1
+- job_name: 'ccwpv1_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://ccwpv1:8080/measure/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: ccwpv1:7979
+# Commercial customer without PV 1
+- job_name: 'ccwopv1_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://ccwopv1:8080/measure/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: ccwopv1:7979
+# Price Manager
+- job_name: 'pricemanager_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://pricemanager:8080/info/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: pricemanager:7979      
+# Community Battery
+- job_name: 'cbat_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://cbat:8080/measure/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: cbat:7979      
+# Community PV
+- job_name: 'cpv_data'
+  metrics_path: /probe
+  static_configs:
+    - targets:
+      - http://cpv:8080/measure/ 
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: cpv:7979
+ ######################################################################
