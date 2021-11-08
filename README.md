@@ -71,6 +71,10 @@ To run the environment:
 
 Please see conference [homepage](http://www.comforen.org).
 
+## Whart the constraints and requirements for the developed solution?
+
+Please see conference [homepage](http://www.comforen.org).
+
 ## Conference information
 
 ![ComForEn 2021](http://www.comforen.org/.cm4all/mediadb/ComForEn_2021%20Logo.jpg)
