@@ -21,7 +21,8 @@ To run the environment:
     * To run it in the detached mode execute `docker-compose up -d` or `docker compose up -d`
 4. You can access the running monitoring toolkit [Prometheus](https://prometheus.io/docs/introduction/overview/)  and [Grafa](https://grafana.com/) dashboard with
     * [http://localhost:9099](http://localhost:9099) for Promethus console
-    * [http://localhost:3030](http://localhost:3030) for Grafa console (username: `admin`, password: `admin`)  
+    * [http://localhost:3030](http://localhost:3030) for Grafa console (username: `admin`, password: `admin`)
+    * In Grafa, there should a dashboard named `ComForEn 2021 Challenge Demo` in the `Services` [folder](http://localhost:3030/dashboards) that you can open and view the values.
 5. Stop the stack by executing either of these commands
     * `docker-compose down` will stop as well as remove all the containers
     * `docker-compose down --rmi all --volumes` will stop and remove all containers and clear the volumes
