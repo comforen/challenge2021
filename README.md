@@ -65,7 +65,7 @@ To run the environment:
     * [http://localhost:3030](http://localhost:3030) for Grafa console (username: `admin`, password: `admin`)
 3. Stop the stack by executing either of these commands
     * `docker-compose down` will stop as well as remove all the containers
-    * `docker-compose down -v` will additionally will clean the volumes
+    * `docker-compose down -v` additionally will clean the volumes
 
 ## How to submit your solved challenge?
 
