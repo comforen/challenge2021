@@ -71,7 +71,7 @@ To run the environment:
 
 Please see conference [homepage](http://www.comforen.org).
 
-## Whart the constraints and requirements for the developed solution?
+## What are the constraints and requirements for the developed solution?
 
 Please see conference [homepage](http://www.comforen.org).
 
