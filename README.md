@@ -25,7 +25,7 @@ To run the environment:
     * In Grafa, there should a dashboard named `ComForEn 2021 Challenge Demo` in the `Services` [folder](http://localhost:3030/dashboards) that you can open and view the values.
 5. Stop the stack by executing either of these commands
     * `docker-compose down` will stop as well as remove all the containers
-    * `docker-compose down --rmi all --volumes` will stop and remove all containers and clear the volumes
+    * `docker-compose down -v` would additionally clear the volumes
 
 ## How to submit your solved challenge?
 
