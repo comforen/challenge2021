@@ -9,21 +9,22 @@ The instructions and virtual environment for solving the *Self-optimization Chal
 More details about the conference and the challenge are available at the conference [website](http://www.comforen.org).
 
 ## Composition and interaction
+
 The environment is composed of the following componets in addition to dashboard and monitoring toolkit.
 
-|           Component            |   Type   | # of instances | 
-| ------------------------------ | -------- | -------------- |
-| Residential with generation    | CUSTOMER | 2              |
-| Residential without generation | CUSTOMER | 2              |
-| Commercial with generation     | CUSTOMER | 1              |
-| Commercial with generation     | CUSTOMER | 1              |
-| Community PV                   | CPV      | 1              |
-| Community Battery              | CBATTERY | 1              |
-| Price/Market Manager           | PRICE    | 1              |
+|                Component                |   Type   | # of instances |
+| --------------------------------------- | -------- | -------------- |
+| Residential Customer with generation    | CUSTOMER | 2              |
+| Residential Customer without generation | CUSTOMER | 2              |
+| Commercial Customer with generation     | CUSTOMER | 1              |
+| Commercial Customer with generation     | CUSTOMER | 1              |
+| Community PV                            | CPV      | 1              |
+| Community Battery                       | CBATTERY | 1              |
+| Price/Market Manager                    | PRICE    | 1              |
 
+Each of these components provide a RESTful API with to perforem the expected functions. Below you can find a summary of the REST API endpoints that you can use in your solution when solving the challenge. Please note that the environment in this repo is based on the mockups mostly that serve random values under the defined range in the datamodel. More detailed documentation along with client SDKs will be available soon.
 
 ### Customer
-REST Endpoints
 
 |      Endpoint       | Method | Input |                 Sample Output                 |
 | ------------------- | ------ | ----- | --------------------------------------------- |
@@ -44,8 +45,7 @@ REST Endpoints
 
 |      Endpoint       | Method | Input |                                                           Sample Output                                                           |
 | ------------------- | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `host:8080/info` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
-
+| `host:8080/measure` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
 
 ## How to run the virtual environment?
 
