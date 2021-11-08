@@ -22,7 +22,7 @@ The environment is composed of the following componets in addition to dashboard 
 | Community Battery                       | CBATTERY | 1              |
 | Price/Market Manager                    | PRICE    | 1              |
 
-Each of these components provide a RESTful API with to perforem the expected functions. Below you can find a summary of the REST API endpoints that you can use in your solution when solving the challenge. Please note that the environment in this repo is based on the mockups mostly that serve random values under the defined range in the datamodel. More detailed documentation along with client SDKs will be available soon.
+Each of these components provide a RESTful API with to perform the expected functions. Below you can find a summary of the REST API endpoints that you can use in your solution when solving the challenge. Please note that the environment in this repo is based on the mockups mostly that serve random values under the defined range in the datamodel. More detailed documentation along with client SDKs will be available soon.
 
 ### Customer
 
@@ -54,7 +54,7 @@ The virtual-environment is composed with Docker. Therefore, you will need Docker
 To run the environment:
 
 1. Clone this repository.
-2. In a shell, navigate to the `pre` folder in the cloned repository and execute one of the following
+2. Open a shell and navigate to the `pre` folder in the cloned repository.
 1. You can run the stack with either `docker compose` or `docker-compose` commands
     * To run in an interactive mode, execute `docker-compose up` or `docker compose up`
     * To run it in the detached mode execute `docker-compose up -d` or `docker compose up -d`
