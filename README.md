@@ -10,7 +10,7 @@ More details about the conference and the challenge are available at the confere
 
 ## Composition and interaction
 
-The environment is composed of the following componets in addition to dashboard and monitoring toolkit.
+The environment is composed of the following components in addition to dashboard and monitoring toolkit.
 
 |                Component                |   Type   | # of instances |
 | --------------------------------------- | -------- | -------------- |
@@ -31,11 +31,13 @@ Each of these components provide a RESTful API with to perform the expected func
 | `host:8080/measure` | GET    |       | `{"active_power":3.93,"reactive_power":0.47}` |
 
 ### Community PV
+
 |      Endpoint       | Method | Input |                 Sample Output                 |
 | ------------------- | ------ | ----- | --------------------------------------------- |
 | `host:8080/measure` | GET    |       | `{"active_power":3.93,"reactive_power":0.47}` |
 
 ### Community Battery
+
 |      Endpoint       | Method |                     Input                     |                 Sample Output                 |
 | ------------------- | ------ | --------------------------------------------- | --------------------------------------------- |
 | `host:8080/config`  | POST   | `{"active_power":3.93,"reactive_power":0.47}` | `{"active_power":3.93,"reactive_power":0.47}` |
@@ -63,7 +65,7 @@ To run the environment:
     * [http://localhost:3030](http://localhost:3030) for Grafa console (username: `admin`, password: `admin`)
 3. Stop the stack by executing either of these commands
     * `docker-compose down` will stop as well as remove all the containers
-    * `docker-compose down --rmi all --volumes` will stop and remove all containers and clear the volums
+    * `docker-compose down -v` will additionally will clean the volumes
 
 ## How to submit your solved challenge?
 
