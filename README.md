@@ -15,7 +15,7 @@ The virtual-environment is composed with Docker. Therefore, you will need Docker
 To run the environment:
 
 1. Clone this repository.
-2. In a shell, navigate to the `pre` folder in the cloned repository and execute one of the following
+2. In a shell, navigate to the `pre` folder in the cloned repository.
 3. You can run the stack with either `docker compose` or `docker-compose` commands
     * To run in an interactive mode, execute `docker-compose up` or `docker compose up`
     * To run it in the detached mode execute `docker-compose up -d` or `docker compose up -d`
