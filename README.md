@@ -8,6 +8,45 @@ The instructions and virtual environment for solving the *Self-optimization Chal
 
 More details about the conference and the challenge are available at the conference [website](http://www.comforen.org).
 
+## Composition and interaction
+The environment is composed of the following componets in addition to dashboard and monitoring toolkit.
+
+|           Component            |   Type   | # of instances | 
+| ------------------------------ | -------- | -------------- |
+| Residential with generation    | CUSTOMER | 2              |
+| Residential without generation | CUSTOMER | 2              |
+| Commercial with generation     | CUSTOMER | 1              |
+| Commercial with generation     | CUSTOMER | 1              |
+| Community PV                   | CPV      | 1              |
+| Community Battery              | CBATTERY | 1              |
+| Price/Market Manager           | PRICE    | 1              |
+
+
+### Customer
+REST Endpoints
+
+|      Endpoint       | Method | Input |                 Sample Output                 |
+| ------------------- | ------ | ----- | --------------------------------------------- |
+| `host:8080/measure` | GET    |       | `{"active_power":3.93,"reactive_power":0.47}` |
+
+### Community PV
+|      Endpoint       | Method | Input |                 Sample Output                 |
+| ------------------- | ------ | ----- | --------------------------------------------- |
+| `host:8080/measure` | GET    |       | `{"active_power":3.93,"reactive_power":0.47}` |
+
+### Community Battery
+|      Endpoint       | Method |                     Input                     |                 Sample Output                 |
+| ------------------- | ------ | --------------------------------------------- | --------------------------------------------- |
+| `host:8080/config`  | POST   | `{"active_power":3.93,"reactive_power":0.47}` | `{"active_power":3.93,"reactive_power":0.47}` |
+| `host:8080/measure` | GET    |                                               | `{"active_power":3.93,"reactive_power":0.47}` |
+
+## Price Manager
+
+|      Endpoint       | Method | Input |                                                           Sample Output                                                           |
+| ------------------- | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `host:8080/measure` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
+
+
 ## How to run the virtual environment?
 
 The virtual-environment is composed with Docker. Therefore, you will need Docker and compose already installed.
@@ -15,17 +54,16 @@ The virtual-environment is composed with Docker. Therefore, you will need Docker
 To run the environment:
 
 1. Clone this repository.
-2. In a shell, navigate to the `pre` folder in the cloned repository.
-3. You can run the stack with either `docker compose` or `docker-compose` commands
+2. In a shell, navigate to the `pre` folder in the cloned repository and execute one of the following
+1. You can run the stack with either `docker compose` or `docker-compose` commands
     * To run in an interactive mode, execute `docker-compose up` or `docker compose up`
     * To run it in the detached mode execute `docker-compose up -d` or `docker compose up -d`
-4. You can access the running monitoring toolkit [Prometheus](https://prometheus.io/docs/introduction/overview/)  and [Grafa](https://grafana.com/) dashboard with
+4. You can access the running monoting toolkit [Prometheus](https://prometheus.io/docs/introduction/overview/)  and [Grafa](https://grafana.com/) dashboard with
     * [http://localhost:9099](http://localhost:9099) for Promethus console
     * [http://localhost:3030](http://localhost:3030) for Grafa console (username: `admin`, password: `admin`)
-    * In Grafa, there should a dashboard named `ComForEn 2021 Challenge Demo` in the `Services` [folder](http://localhost:3030/dashboards) that you can open and view the values.
-5. Stop the stack by executing either of these commands
+3. Stop the stack by executing either of these commands
     * `docker-compose down` will stop as well as remove all the containers
-    * `docker-compose down -v` would additionally clear the volumes
+    * `docker-compose down --rmi all --volumes` will stop and remove all containers and clear the volums
 
 ## How to submit your solved challenge?
 
@@ -38,3 +76,4 @@ Please see conference [homepage](http://www.comforen.org).
 On 22. and 23. November 2021 in Vienna and online
 
 For more information and registration, please visit the conference [homepage](http://www.comforen.org).
+
