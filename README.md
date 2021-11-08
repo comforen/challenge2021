@@ -16,7 +16,7 @@ The environment is composed of the following components in addition to dashboard
 | --------------------------------------- | -------- | -------------- |
 | Residential Customer with generation    | CUSTOMER | 2              |
 | Residential Customer without generation | CUSTOMER | 2              |
-| Commercial Customer with generation     | CUSTOMER | 1              |
+| Commercial Customer without generation     | CUSTOMER | 1              |
 | Commercial Customer with generation     | CUSTOMER | 1              |
 | Community PV                            | CPV      | 1              |
 | Community Battery                       | CBATTERY | 1              |
