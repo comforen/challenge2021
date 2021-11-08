@@ -101,5 +101,7 @@ services:
       ports:
         - "3030:3000"
       volumes:
-        - grafana-data:/var/lib/grafana        
+        - grafana-data:/var/lib/grafana
+        - ./grafana/data-sources:/etc/grafana/provisioning/datasources
+        - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
       restart: unless-stopped

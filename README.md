@@ -10,9 +10,25 @@ More details about the conference and the challenge are available at the confere
 
 ## How to run the virtual environment?
 
-The virtual-environment is composed with Docker.
+The virtual-environment is composed with Docker. Therefore, you will need Docker and compose already installed.
+
+To run the environment:
+
+1. Clone this repository.
+2. In a shell, navigate to the `pre` folder in the cloned repository and execute one of the following
+3. You can run the stack with either `docker compose` or `docker-compose` commands
+    * To run in an interactive mode, execute `docker-compose up` or `docker compose up`
+    * To run it in the detached mode execute `docker-compose up -d` or `docker compose up -d`
+4. You can access the running monitoring toolkit [Prometheus](https://prometheus.io/docs/introduction/overview/)  and [Grafa](https://grafana.com/) dashboard with
+    * [http://localhost:9099](http://localhost:9099) for Promethus console
+    * [http://localhost:3030](http://localhost:3030) for Grafa console (username: `admin`, password: `admin`)  
+5. Stop the stack by executing either of these commands
+    * `docker-compose down` will stop as well as remove all the containers
+    * `docker-compose down --rmi all --volumes` will stop and remove all containers and clear the volumes
 
 ## How to submit your solved challenge?
+
+Please see conference [homepage](http://www.comforen.org).
 
 ## Conference information
 
