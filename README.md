@@ -57,13 +57,14 @@ To run the environment:
 
 1. Clone this repository.
 2. Open a shell and navigate to the `pre` folder in the cloned repository.
-1. You can run the stack with either `docker compose` or `docker-compose` commands
+3. You can run the stack with either `docker compose` or `docker-compose` commands
     * To run in an interactive mode, execute `docker-compose up` or `docker compose up`
     * To run it in the detached mode execute `docker-compose up -d` or `docker compose up -d`
-4. You can access the running monoting toolkit [Prometheus](https://prometheus.io/docs/introduction/overview/)  and [Grafa](https://grafana.com/) dashboard with
+4. You can access the running monitoring toolkit [Prometheus](https://prometheus.io/docs/introduction/overview/)  and [Grafa](https://grafana.com/) dashboard with
     * [http://localhost:9099](http://localhost:9099) for Promethus console
     * [http://localhost:3030](http://localhost:3030) for Grafa console (username: `admin`, password: `admin`)
-3. Stop the stack by executing either of these commands
+    * After logging into Grafa, you can access the dashboard name `ComForEn 2021 Challenge Demo` from [http://localhost:3030/dashboards](http://localhost:3030/dashboards).
+5. Stop the stack by executing either of these commands
     * `docker-compose down` will stop as well as remove all the containers
     * `docker-compose down -v` additionally will clean the volumes
 
