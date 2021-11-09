@@ -49,6 +49,8 @@ Each of these components provide a RESTful API with to perform the expected func
 | ------------------- | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `host:8080/measure` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
 
+For a more detailed documentation and resources, please visit accompanying [GitHub Pages](https://comforen.github.io/).
+
 ## How to run the virtual environment?
 
 The virtual-environment is composed with Docker. Therefore, you will need Docker and compose already installed.
