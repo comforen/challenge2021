@@ -14,13 +14,13 @@ The environment is composed of the following components in addition to dashboard
 
 |                Component                |   Type   | # of instances |
 | --------------------------------------- | -------- | -------------- |
-| Residential Customer with generation    | CUSTOMER | 2              |
-| Residential Customer without generation | CUSTOMER | 2              |
-| Commercial Customer without generation     | CUSTOMER | 1              |
-| Commercial Customer with generation     | CUSTOMER | 1              |
-| Community PV                            | CPV      | 1              |
-| Community Battery                       | CBATTERY | 1              |
-| Price/Market Manager                    | PRICE    | 1              |
+| Residential Customer with generation `rcwpv`    | CUSTOMER | 2              |
+| Residential Customer without generation `rcwopv` | CUSTOMER | 2              |
+| Commercial Customer without generation `ccwopv` | CUSTOMER | 1              |
+| Commercial Customer with generation `ccwpv`     | CUSTOMER | 1              |
+| Community PV `cpv`                           | CPV      | 1              |
+| Community Battery `cbat`                       | CBATTERY | 1              |
+| Price/Market Manager `price`                    | PRICE    | 1              |
 
 Each of these components provide a RESTful API with to perform the expected functions. Below you can find a summary of the REST API endpoints that you can use in your solution when solving the challenge. Please note that the environment in this repo is based on the mockups mostly that serve random values under the defined range in the datamodel. More detailed documentation along with client SDKs will be available soon.
 
