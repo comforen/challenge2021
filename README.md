@@ -34,20 +34,20 @@ Each of these components provide a RESTful API with to perform the expected func
 
 |      Endpoint       | Method | Input |                 Sample Output                 |
 | ------------------- | ------ | ----- | --------------------------------------------- |
-| `host:8080/measure` | GET    |       | `{"active_power":3.93,"reactive_power":0.47}` |
+| `cpv:8080/measure` | GET    |       | `{"active_power":3.93,"reactive_power":0.47}` |
 
 ### Community Battery
 
 |      Endpoint       | Method |                     Input                     |                 Sample Output                 |
 | ------------------- | ------ | --------------------------------------------- | --------------------------------------------- |
-| `host:8080/config`  | POST   | `{"active_power":3.93,"reactive_power":0.47}` | `{"active_power":3.93,"reactive_power":0.47}` |
-| `host:8080/measure` | GET    |                                               | `{"active_power":3.93,"reactive_power":0.47}` |
+| `cbat:8080/config`  | POST   | `{"active_power":3.93,"reactive_power":0.47}` | |
+| `cbat:8080/measure` | GET    |                                               | `{"active_power":3.93,"reactive_power":0.47}` |
 
 ## Price Manager
 
 |      Endpoint       | Method | Input |                                                           Sample Output                                                           |
 | ------------------- | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
-| `host:8080/info` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
+| `price:8080/info` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
 
 For a more detailed documentation and resources, please visit accompanying [GitHub Pages](https://comforen.github.io/).
 
