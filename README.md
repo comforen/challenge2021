@@ -22,7 +22,7 @@ The environment is composed of the following components in addition to dashboard
 | Community Battery `cbat`                       | CBATTERY | 1              |
 | Price/Market Manager `price`                    | PRICE    | 1              |
 
-To perform the expected functions, each of these components provides a RESTful API. The REST API endpoints that you can use in your solution when solving the challenge are listed below. Please keep in mind that the environment in this repo is mostly based on mockups that serve random values within the datamodel's defined range. More information, as well as other resources, can be found at the accompanying [GitHub Pages](https://comforen.github.io/).
+To perform the expected functions, each of these components provides a RESTful API. The REST API endpoints that you can use in your solution when solving the challenge are listed below. Please keep in mind that the environment in this repo is mostly based on mockups that serve random values within the range defined in the data model. More information, as well as other resources, can be found at the accompanying [GitHub Pages](https://comforen.github.io/).
 
 ### Customer
 
@@ -60,18 +60,20 @@ To run the environment:
 3. You can run the stack with either `docker compose` or `docker-compose` commands
     * To run in an interactive mode, execute `docker-compose up` or `docker compose up`
     * To run it in the detached mode execute `docker-compose up -d` or `docker compose up -d`
-4. You can access the running monitoring toolkit [Prometheus](https://prometheus.io/docs/introduction/overview/)  and [Grafa](https://grafana.com/) dashboard with
+4. You can access the running monitoring toolkit [Prometheus](https://prometheus.io/docs/introduction/overview/)  and [Grafana](https://grafana.com/) dashboard with
     * [http://localhost:9099](http://localhost:9099) for Promethus console
-    * [http://localhost:3030](http://localhost:3030) for Grafa console (username: `admin`, password: `admin`)
-    * After logging into Grafa, you can access the dashboard named `ComForEn 2021 Challenge Demo` from [http://localhost:3030/dashboards](http://localhost:3030/dashboards).
+    * [http://localhost:3030](http://localhost:3030) for Grafana console (username: `admin`, password: `admin`)
+    * After logging into Grafana, you can access the dashboard named `ComForEn 2021 Challenge Demo` from [http://localhost:3030/dashboards](http://localhost:3030/dashboards).
     ![Dashboard-sample](https://github.com/comforen/challenge2021/blob/main/docs/dashboard-sample.png)
 5. Stop the stack by executing either of these commands
     * `docker-compose down` will stop as well as remove all the containers
     * `docker-compose down -v` additionally will clean the volumes
 
-## How to submit your solved challenge?
+## How to submit your solved challenge and until when?
 
-Please see conference [homepage](http://www.comforen.org).
+Submission deadline: *17.11.2021*
+
+For submission details, please see conference [homepage](http://www.comforen.org).
 
 ## What are the constraints and requirements for the developed solution?
 
