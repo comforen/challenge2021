@@ -22,7 +22,7 @@ The environment is composed of the following components in addition to dashboard
 | Community Battery `cbat`                       | CBATTERY | 1              |
 | Price/Market Manager `price`                    | PRICE    | 1              |
 
-Each of these components provide a RESTful API with to perform the expected functions. Below you can find a summary of the REST API endpoints that you can use in your solution when solving the challenge. Please note that the environment in this repo is based on the mockups mostly that serve random values under the defined range in the datamodel. More detailed documentation along with client SDKs will be available soon.
+To perform the expected functions, each of these components provides a RESTful API. The REST API endpoints that you can use in your solution when solving the challenge are listed below. Please keep in mind that the environment in this repo is mostly based on mockups that serve random values within the datamodel's defined range. More information, as well as other resources, can be found at the accompanying [GitHub Pages](https://comforen.github.io/).
 
 ### Customer
 
@@ -48,8 +48,6 @@ Each of these components provide a RESTful API with to perform the expected func
 |      Endpoint       | Method | Input |                                                           Sample Output                                                           |
 | ------------------- | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `price:8080/info` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
-
-For a more detailed documentation and resources, please visit accompanying [GitHub Pages](https://comforen.github.io/).
 
 ## How to run the virtual environment?
 
