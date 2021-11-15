@@ -49,6 +49,23 @@ To perform the expected functions, each of these components provides a RESTful A
 | ------------------- | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `price:8080/info` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
 
+## Prometheus Measures to be exposed
+
+For each timestep, the optimization module has to expose the following measures for each of the six `<source>` in the environment. These sources are `rcwpv1`, `rcwpv2`, `rcwopv1`, `rcwopv2`, `ccwpv1` and `ccwopv1`. 
+
+
+| Measure # | Measure |    Label(s)    |                                  Description                                   |
+| --------- | ------- | -------------- | ------------------------------------------------------------------------------ |
+| 1         | `fcpv`  | for=`<source>` | The amount of energy `used` by the `<source>` from the community PV            |
+| 2         | `tcr`   | for=`<source>` | The amount of energy `shared` by the `<source>` to the residential customer(s) |
+| 3         | `fcr`   | for=`<source>` | The amount of energy `used` by the `<source>` from the residential customer(s) |
+| 4         | `tcc`   | for=`<source>` | The amount of energy `shared` by the `<source>` to the commercial customer(s)  |
+| 5         | `fcc`   | for=`<source>` | The amount of energy `used` by the `<source>` from the commercial customer(s)  |
+| 6         | `tcb`   | for=`<source>` | The amount of energy `shared` by the `<source>` to the community Battery       |
+| 7         | `fcb`   | for=`<source>` | The amount of energy `used` by the `<source>` from the community Battery       |
+| 8         | `tg`    | for=`<source>` | The amount of energy `shared` by the `<source>` to the grid                    |
+| 9        | `fg`    | for=`<source>` | The amount of energy `used` by the `<source>` from the grid                    |
+
 ## How to run the virtual environment?
 
 The virtual-environment is composed with Docker. Therefore, you will need Docker and compose already installed.
