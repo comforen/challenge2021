@@ -49,7 +49,7 @@ To perform the expected functions, each of these components provides a RESTful A
 | ------------------- | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `price:8080/info` | GET    |       | `{"gridSelling": 0, "gridBuying": 0, "p2pSelling": 0, "p2pBuying": 0, "cBatterySelling": 0, "cBatteryBuying": 0, "cPVBuying": 0}` |
 
-## Prometheus Measures to be exposed
+### Prometheus Measures to be exposed
 
 For each timestep, the optimization module has to expose the following measures for each of the six `<source>` in the environment. These sources are `rcwpv1`, `rcwpv2`, `rcwopv1`, `rcwopv2`, `ccwpv1` and `ccwopv1`. 
 
@@ -65,6 +65,12 @@ For each timestep, the optimization module has to expose the following measures 
 | 7         | `fcb`   | for=`<source>` | The amount of energy `used` by the `<source>` from the community Battery       |
 | 8         | `tg`    | for=`<source>` | The amount of energy `shared` by the `<source>` to the grid                    |
 | 9        | `fg`    | for=`<source>` | The amount of energy `used` by the `<source>` from the grid                    |
+
+### Community battery properties/constraints
+
+* The maximum capacity: **15kWh**
+* The maximum charging/discharging power: **10kWh**
+* If PV energy cannot be used by any customer, it will be fed into the grid and there will be **no direct transaction** from PV to battery.
 
 ## How to run the virtual environment?
 
