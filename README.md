@@ -2,6 +2,20 @@
 
 Welcome to supplement repository for this year's challenge.
 
+**Table of Contents**
+  * [What is this repository about?](#what-is-this-repository-about)
+  * [Composition and interaction](#composition-and-interaction)
+    + [Customer](#customer)
+    + [Community PV](#community-pv)
+    + [Community Battery](#community-battery)
+    + [Price Manager](#price-manager)
+    + [Prometheus Measures to be exposed](#prometheus-measures-to-be-exposed)
+    + [Community battery properties and constraints](#community-battery-properties-and-constraints)
+  * [How to run the virtual environment?](#how-to-run-the-virtual-environment)
+  * [How to submit your solved challenge and until when?](#how-to-submit-your-solved-challenge-and-until-when)
+  * [What are the constraints and requirements for the developed solution?](#what-are-the-constraints-and-requirements-for-the-developed-solution)
+  * [Conference information](#conference-information)
+
 ## What is this repository about?
 
 The instructions and virtual environment for solving the *Self-optimization Challenge 2021*, in a European Energy Community setting, are available in this repository. Participants are invited to join and submit their solutions in order to solve this challenge. A prize will be given to the winner. In addition, an expert panel would be available for feedback and mentoring following the conference.
@@ -43,7 +57,7 @@ To perform the expected functions, each of these components provides a RESTful A
 | `cbat:8080/config`  | POST   | `{"active_power":3.93,"reactive_power":0.47}` | |
 | `cbat:8080/measure` | GET    |                                               | `{"active_power":3.93,"reactive_power":0.47}` |
 
-## Price Manager
+### Price Manager
 
 |      Endpoint       | Method | Input |                                                           Sample Output                                                           |
 | ------------------- | ------ | ----- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -66,7 +80,7 @@ For each timestep, the optimization module has to expose the following measures 
 | 8         | `tg`    | for=`<source>` | The amount of energy `shared` by the `<source>` to the grid                    |
 | 9        | `fg`    | for=`<source>` | The amount of energy `used` by the `<source>` from the grid                    |
 
-### Community battery properties/constraints
+### Community battery properties and constraints
 
 * The maximum capacity: **15kWh**
 * The maximum charging/discharging power: **10kWh**
@@ -94,7 +108,7 @@ To run the environment:
 
 ## How to submit your solved challenge and until when?
 
-Submission deadline: *17.11.2021*
+Submission deadline: **17.11.2021**
 
 For submission details, please see conference [homepage](http://www.comforen.org).
 
